@@ -89,7 +89,7 @@ document.getElementById('loginForm').addEventListener('submit', function (e) {
 
             if (isInjection) {
                 resultDiv.className = 'result success';
-                resultDiv.innerHTML = '<strong>LOGIN SUCCESSFUL!</strong><br>SQL Injection bypassed authentication!<br>Logged in as: <strong>' + userEmail + '</strong> (' + userRole + ')<br><br>The SQL injection returned ' + results[0].values.length + ' row(s) from the database.';
+                resultDiv.innerHTML = '<strong>LOGIN SUCCESSFUL!</strong><br>Logged in as: <strong>' + userEmail + '</strong> (' + userRole + ')<br><br>The SQL injection returned ' + results[0].values.length + ' row(s) from the database.';
             } else {
                 resultDiv.className = 'result success';
                 resultDiv.innerHTML = '<strong>LOGIN SUCCESSFUL!</strong><br>Welcome, <strong>' + userEmail + '</strong>! (' + userRole + ')';
