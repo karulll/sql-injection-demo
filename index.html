@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SQL Injection Demo</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>SQL Injection Demo</h1>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>Login Form</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" placeholder="Enter username">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="text" id="password" placeholder="Enter password">
+                    </div>
+                    <button type="submit">Login</button>
+                </form>
+
+                <div id="result"></div>
+            </div>
+
+            <div class="card">
+                <h2>Logs</h2>
+                <div class="logs-block" id="logs">
+                    <span class="log-info">Waiting for login attempt...</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Code</h2>
+                <div class="code-block" id="codeBlock">
+<span class="sql-keyword">SELECT</span> <span class="sql-operator">*</span>
+<span class="sql-keyword">FROM</span> <span class="sql-table">users</span>
+<span class="sql-keyword">WHERE</span> <span class="sql-column">email</span> <span class="sql-operator">=</span> <span class="sql-string">''</span>
+  <span class="sql-keyword">AND</span> <span class="sql-column">pass</span> <span class="sql-operator">=</span> <span class="sql-string">''</span> <span class="sql-keyword">LIMIT</span> <span class="sql-operator">1</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <h2>Users Database Table (Live SQLite Database)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Role</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>admin</td>
+                        <td>adminpass123</td>
+                        <td>Administrator</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>user</td>
+                        <td>userpass123</td>
+                        <td>User</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>guest</td>
+                        <td>guest123</td>
+                        <td>Guest</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sql.js/1.8.0/sql-wasm.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
