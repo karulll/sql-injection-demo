@@ -265,3 +265,19 @@ tr:hover {
         grid-template-columns: 1fr;
     }
 }
+
+@media (max-width: 640px) {
+    table {
+        font-size: 12px;
+    }
+    
+    th, td {
+        padding: 8px;
+        font-size: 12px;
+    }
+    
+    .code-block,
+    .logs-block {
+        font-size: 12px;
+    }
+}
